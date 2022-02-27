@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
     console.log("Connected to db");
+    // console.log(mongoose.connection.readyState) // connection status 0 or 1
 
     app.listen(3000, () => console.log("Server Up and running on 3000"));
 })
