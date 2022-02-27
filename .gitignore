@@ -3,3 +3,5 @@ node_modules
 
 # Ignorera Mac-systemfiler
 .DS_store
+
+.env
