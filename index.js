@@ -30,7 +30,15 @@ app.get('/', (req, res) => {
     res.render('todo.ejs');
 });
 
-// POST METHOD
-app.post('/', (req, res) => {
-    console.log(req.body);
+//POST METHOD
+app.post('/', async (req, res) => {
+    const todoTask = new TodoTask({
+        content: req.body.content
+    });
+    try {
+        await todoTask.save();
+        res.redirect("/");
+    } catch (err) {
+        res.redirect("/");
+    }
 });
