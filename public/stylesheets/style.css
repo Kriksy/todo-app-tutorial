@@ -46,7 +46,7 @@ body {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 7.5px 5px 7.5px;
     font-family: 'Candal', sans-serif;
     background-color: rgb(51, 212, 100);
 }

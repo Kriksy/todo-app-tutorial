@@ -26,8 +26,12 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 app.set("view engine", "ejs");
 
 // GET METHOD
-app.get('/', (req, res) => {
-    res.render('todo.ejs');
+app.get("/", (req, res) => {
+    TodoTask.find({}, (err, tasks) => {
+        res.render("todo.ejs", { todoTasks: tasks });
+        // console.log({ todoTasks: tasks });
+        // console.log("error: ", err)
+    });
 });
 
 //POST METHOD
